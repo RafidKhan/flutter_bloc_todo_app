@@ -11,7 +11,7 @@ class UserRepository {
       final response = await apiClient.getRequest(url: url);
 
       if (response.statusCode == 200) {
-        List users = response.data;
+        final List users = response.data;
         final List<UserModel> userList = [];
         users.forEach((element) {
           userList.add(UserModel.fromMap(element));

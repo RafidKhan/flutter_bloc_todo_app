@@ -44,7 +44,9 @@ class UserList extends StatelessWidget {
     final cubit = context.watch<UserListCubit>();
     final state = cubit.state;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Users"),
+      ),
       body: ListView.builder(
         itemCount: state.users.length,
         itemBuilder: (context, index) {

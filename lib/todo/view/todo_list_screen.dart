@@ -44,7 +44,9 @@ class TodoList extends StatelessWidget {
     final cubit = context.watch<TodoListCubit>();
     final state = cubit.state;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("ToDos"),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           cubit.clearTitleController();
