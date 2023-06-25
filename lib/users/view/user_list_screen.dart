@@ -51,7 +51,7 @@ class UserList extends StatelessWidget {
           final UserModel user = state.users[index];
           return ListTile(
             title: Text(user.name ?? ""),
-            leading: const Icon(Icons.note),
+            leading: const Icon(Icons.person),
             onTap: () {
               Navigator.push(
                 context,

@@ -1,16 +1,14 @@
-import 'dart:developer';
-
-import 'package:dio/dio.dart';
+import 'package:flutter_bloc_todo/api_client/api_client.dart';
 import 'package:flutter_bloc_todo/users/model/user_model.dart';
 
 class UserRepository {
-  final Dio dio = Dio();
+  final ApiClient apiClient = ApiClient();
 
   Future<List<UserModel>?> getUsersList() async {
     try {
       const String url = 'https://jsonplaceholder.typicode.com/users';
 
-      final response = await dio.get(url);
+      final response = await apiClient.getRequest(url: url);
 
       if (response.statusCode == 200) {
         List users = response.data;
