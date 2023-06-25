@@ -47,8 +47,11 @@ class TodoList extends StatelessWidget {
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          cubit.clearTitleController();
+          cubit.clearDescriptionController();
           showModalBottomSheet(
             context: context,
+            isScrollControlled: true,
             builder: (context) => TodoAddBottomSheet(
               cubit: cubit,
               onSave: (title, description) {

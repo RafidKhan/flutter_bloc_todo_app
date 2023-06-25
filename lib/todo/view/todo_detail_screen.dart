@@ -22,6 +22,7 @@ class TodoDetailScreen extends StatelessWidget {
               cubit.setDescription();
               showModalBottomSheet(
                 context: context,
+                isScrollControlled: true,
                 builder: (context) => TodoEditBottomSheet(
                   cubit: cubit,
                   onSave: (title, description) {

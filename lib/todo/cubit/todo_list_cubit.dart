@@ -21,7 +21,6 @@ class TodoListCubit extends Cubit<ComplexListState> {
   }
 
   Future<void> fetchTodoItems() async {
-    await Future.delayed(const Duration(seconds: 2));
     final List<TodoItemModel> todoItems = [
       for (int i = 0; i < 10; i++)
         TodoItemModel(
